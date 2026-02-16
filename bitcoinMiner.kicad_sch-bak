@@ -3854,6 +3854,16 @@
 				(justify left)
 			)
 		)
+		(pin "AGND" output
+			(at 250.19 50.8 0)
+			(uuid "acdaa8b3-12cd-4834-bbc2-46e07ca0705f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(pin "LED_ACT" output
 			(at 250.19 66.04 0)
 			(uuid "062871a2-492c-4d87-9b81-bc6dad95e502")
