@@ -4201,6 +4201,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 30.48) (xy 133.35 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b942ba57-d62a-40d1-8d96-5a503f30cf96")
+	)
+	(wire
+		(pts
 			(xy 38.1 63.5) (xy 49.53 63.5)
 		)
 		(stroke
@@ -5410,6 +5420,17 @@
 				(hide yes)
 			)
 		)
+	)
+	(hierarchical_label "VDD"
+		(shape input)
+		(at 133.35 30.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1e6bfdcc-1c41-4cd9-a1fc-ab7253ef5840")
 	)
 	(hierarchical_label "VDD"
 		(shape input)
