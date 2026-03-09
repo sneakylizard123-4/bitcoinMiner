@@ -2426,6 +2426,12 @@
 		(uuid "b1ba6e1a-b93a-4334-83d8-66c1e78ecd46")
 	)
 	(junction
+		(at 158.75 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b4ab55aa-57b0-4eec-8475-ecbfe6f709aa")
+	)
+	(junction
 		(at 142.24 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2552,6 +2558,16 @@
 			(type default)
 		)
 		(uuid "068ff5b3-9e08-40a3-a3b5-85d0e3642792")
+	)
+	(wire
+		(pts
+			(xy 160.02 90.17) (xy 158.75 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06d631db-1ac6-4976-8767-69221a9ce5c4")
 	)
 	(wire
 		(pts
@@ -3665,6 +3681,16 @@
 	)
 	(wire
 		(pts
+			(xy 158.75 92.71) (xy 161.29 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8459638e-9b7d-4e16-9a23-369425f43884")
+	)
+	(wire
+		(pts
 			(xy 115.57 41.91) (xy 115.57 43.18)
 		)
 		(stroke
@@ -4415,7 +4441,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 92.71) (xy 161.29 92.71)
+			(xy 143.51 92.71) (xy 158.75 92.71)
 		)
 		(stroke
 			(width 0)
@@ -4642,6 +4668,16 @@
 			(type default)
 		)
 		(uuid "f443ee80-1b27-44ff-aed4-3d9d12223554")
+	)
+	(wire
+		(pts
+			(xy 158.75 90.17) (xy 158.75 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f468df89-a3b5-4fbf-9855-8b013f5267de")
 	)
 	(wire
 		(pts
@@ -5374,6 +5410,17 @@
 				(hide yes)
 			)
 		)
+	)
+	(hierarchical_label "VDD"
+		(shape input)
+		(at 160.02 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f51896a3-5b7f-4ddc-bc94-cc781760640e")
 	)
 	(symbol
 		(lib_id "power:GND")
