@@ -44,7 +44,7 @@ A Bitcoin mining board based on the BM1370 ASIC with WiFi capabilities using the
 | C34, C40, C41 | 47uF | 3 |
 | C51-C53 | 22uF | 3 |
 | C32, C39 | 10uF | 2 |
-| C58, C59 (ethernet) | 14pF | 2 |
+| C58, C59 | 14pF | 2 |
 | C35, C43, C46, C47, C49, C50, C72 | misc | 7 |
 | R1, R2, R3 | 1K | 3 |
 | R22, R23, R26-R29 | 49.9 | 6 |
