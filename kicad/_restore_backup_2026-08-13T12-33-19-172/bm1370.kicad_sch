@@ -5869,7 +5869,7 @@
 			(uuid "39245794-7102-4088-b06e-25bf600e6f66")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR010")
 					(unit 1)
@@ -5949,7 +5949,7 @@
 			(uuid "1132272c-e983-41b8-9ece-7ed93c981b41")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C26")
 					(unit 1)
@@ -6027,7 +6027,7 @@
 			(uuid "83558a58-5759-413b-bab6-eb349414d4af")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR06")
 					(unit 1)
@@ -6113,7 +6113,7 @@
 			(uuid "df26d77a-f8d4-4cd8-92a9-e0acb089068a")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "U2")
 					(unit 1)
@@ -6205,7 +6205,7 @@
 			(uuid "7450abf6-57ba-49a1-b78e-f3739603597f")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "U8")
 					(unit 1)
@@ -6285,7 +6285,7 @@
 			(uuid "782c73c9-dfbc-49c9-9053-5e0bd595cb68")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C2")
 					(unit 1)
@@ -6364,7 +6364,7 @@
 			(uuid "8b1d4446-9251-4844-9068-8f8fab20ae8b")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C24")
 					(unit 1)
@@ -6443,7 +6443,7 @@
 			(uuid "044fa0e1-c1e0-41d3-b40b-1cef2f0d1ceb")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C58")
 					(unit 1)
@@ -6523,7 +6523,7 @@
 			(uuid "0b18f884-3f08-42ac-b023-bf176229f8d7")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C28")
 					(unit 1)
@@ -6601,7 +6601,7 @@
 			(uuid "d32a958c-5e46-48bf-9458-b9f42934c85e")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR016")
 					(unit 1)
@@ -6681,7 +6681,7 @@
 			(uuid "5ecf5cd7-66f3-40cc-8d2c-26037eb5e3cd")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C5")
 					(unit 1)
@@ -6757,7 +6757,7 @@
 			(uuid "80e03353-7f96-4eff-aabb-c8689bc7bf52")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP9")
 					(unit 1)
@@ -6835,7 +6835,7 @@
 			(uuid "0d6ba44a-49e1-4e32-8c5e-c9eee3793271")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR018")
 					(unit 1)
@@ -6917,7 +6917,7 @@
 			(uuid "0930e9d8-4c06-417c-a027-f57d1a60d1d2")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "R1")
 					(unit 1)
@@ -6996,7 +6996,7 @@
 			(uuid "138bf6da-7bff-417b-bc05-02fad0a3d2ef")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C18")
 					(unit 1)
@@ -7075,7 +7075,7 @@
 			(uuid "545cbda4-1da9-434d-8327-8542430e2782")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP3")
 					(unit 1)
@@ -7153,7 +7153,7 @@
 			(uuid "5817755a-0d5a-4cd8-8acc-b912ebbabe36")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR017")
 					(unit 1)
@@ -7230,7 +7230,7 @@
 			(uuid "bb8a291d-17df-4148-9aec-e6bbda43f4b7")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP12")
 					(unit 1)
@@ -7306,7 +7306,7 @@
 			(uuid "3ea2fadf-fe4d-49bc-86d1-d617c465bc3f")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP10")
 					(unit 1)
@@ -7384,7 +7384,7 @@
 			(uuid "3130e22f-b15e-4c15-a71d-d9ad195d0597")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR05")
 					(unit 1)
@@ -7463,7 +7463,7 @@
 			(uuid "a6b1c78f-9e90-4f92-aabb-ced3a425265d")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C7")
 					(unit 1)
@@ -7543,7 +7543,7 @@
 			(uuid "cfd1d673-c69c-41f9-bd3c-c2355c704cbf")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C27")
 					(unit 1)
@@ -7621,7 +7621,7 @@
 			(uuid "1c3a5114-eaa2-4e95-a7c7-1f741ad210d2")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR013")
 					(unit 1)
@@ -7699,7 +7699,7 @@
 			(uuid "1ffe51fb-3f67-4506-93d8-968f3f5bdbe3")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR023")
 					(unit 1)
@@ -7778,7 +7778,7 @@
 			(uuid "ac15bd7c-5081-4602-a489-0cf923f2e838")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C20")
 					(unit 1)
@@ -7858,7 +7858,7 @@
 			(uuid "7e21a5ed-02c3-4c60-b6bd-3fa26aa4a599")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C1")
 					(unit 1)
@@ -7948,7 +7948,7 @@
 			(uuid "c9a0f3d3-bbc5-458e-8ca1-2e34830e1675")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "U3")
 					(unit 1)
@@ -8030,7 +8030,7 @@
 			(uuid "4c159123-a12f-486e-bc25-0d83c47cc0b4")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C17")
 					(unit 1)
@@ -8109,7 +8109,7 @@
 			(uuid "eff51027-a90f-43f4-8c9f-ce0cfa3b2b1d")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C11")
 					(unit 1)
@@ -8185,7 +8185,7 @@
 			(uuid "5ff4906c-344b-4cc9-818f-f656b4ebfd35")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP11")
 					(unit 1)
@@ -8265,7 +8265,7 @@
 			(uuid "08255b3c-6484-40d6-94fb-49196745ef4a")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C3")
 					(unit 1)
@@ -8344,7 +8344,7 @@
 			(uuid "a08eba2a-bb08-4280-bc67-683f2f94c689")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C6")
 					(unit 1)
@@ -8422,7 +8422,7 @@
 			(uuid "90d257cb-1d11-4675-b884-e8effe362bd8")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR04")
 					(unit 1)
@@ -8502,7 +8502,7 @@
 			(uuid "b287666d-a65e-4333-a9a3-a2841754288e")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C4")
 					(unit 1)
@@ -8580,7 +8580,7 @@
 			(uuid "d138e01c-93d2-48b7-b4cc-a3992b469a77")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR021")
 					(unit 1)
@@ -8658,7 +8658,7 @@
 			(uuid "62b3435f-a752-474c-8d1c-7b5036281075")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR015")
 					(unit 1)
@@ -8740,7 +8740,7 @@
 			(uuid "03b6a242-7065-4a59-9530-66ec6d1be7c5")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C10")
 					(unit 1)
@@ -8822,7 +8822,7 @@
 			(uuid "1ab95fbb-31a2-48f6-a6a3-fc768093bad0")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "R3")
 					(unit 1)
@@ -8910,7 +8910,7 @@
 			(uuid "c565a4ed-7675-450c-822a-33e331abed2f")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "U4")
 					(unit 1)
@@ -8986,7 +8986,7 @@
 			(uuid "212e7acc-6350-49db-a186-6c692db63974")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP6")
 					(unit 1)
@@ -9064,7 +9064,7 @@
 			(uuid "4914c52d-39ea-44e9-880c-3e986c00a4fb")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR08")
 					(unit 1)
@@ -9141,7 +9141,7 @@
 			(uuid "91e0e1d2-f0fb-4bfc-b7f3-cefb3a62c01f")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP13")
 					(unit 1)
@@ -9218,7 +9218,7 @@
 			(uuid "84cb9698-e5f7-4c69-9a87-dee327007093")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP14")
 					(unit 1)
@@ -9297,7 +9297,7 @@
 			(uuid "16e56c44-d1a3-4339-a98f-3977e6d70fa2")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C9")
 					(unit 1)
@@ -9376,7 +9376,7 @@
 			(uuid "8afca167-ab80-459d-abdd-53e626c19b24")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C13")
 					(unit 1)
@@ -9454,7 +9454,7 @@
 			(uuid "b02c399b-6a72-470e-a4c4-018bdae5cd14")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR014")
 					(unit 1)
@@ -9531,7 +9531,7 @@
 			(uuid "421e4c4b-e8a1-441a-a5cf-85825e3305ee")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP17")
 					(unit 1)
@@ -9610,7 +9610,7 @@
 			(uuid "e853be77-70db-4333-865e-4368bd2b9cda")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C21")
 					(unit 1)
@@ -9687,7 +9687,7 @@
 			(uuid "d5afe63e-0e4c-4b99-a431-184e5abbedfa")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP16")
 					(unit 1)
@@ -9766,7 +9766,7 @@
 			(uuid "e17cf374-b579-46c0-a8c6-b3a7d9463916")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR011")
 					(unit 1)
@@ -9844,7 +9844,7 @@
 			(uuid "37bbf11e-0fb9-4806-8c2a-c95d77c650ee")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR01")
 					(unit 1)
@@ -9922,7 +9922,7 @@
 			(uuid "93e83866-cf2c-4541-a20c-a179f2d43e8a")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR025")
 					(unit 1)
@@ -10000,7 +10000,7 @@
 			(uuid "6660efe7-d529-491d-8cf4-7cd847dcf361")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR03")
 					(unit 1)
@@ -10078,7 +10078,7 @@
 			(uuid "9b65b8dd-c6be-46b0-833c-883a901c7469")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR02")
 					(unit 1)
@@ -10157,7 +10157,7 @@
 			(uuid "01d7d2e0-93de-4d44-ab85-b6eb6f22b3ab")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C12")
 					(unit 1)
@@ -10239,7 +10239,7 @@
 			(uuid "c7023bab-4942-4ca4-9af2-418511a86349")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C14")
 					(unit 1)
@@ -10331,7 +10331,7 @@
 			(uuid "a8901b2d-7198-45b0-a615-32f2449abf73")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "U7")
 					(unit 1)
@@ -10410,7 +10410,7 @@
 			(uuid "f07d2b4f-2ca8-4ecf-a329-4d2d85de1f8e")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C16")
 					(unit 1)
@@ -10486,7 +10486,7 @@
 			(uuid "a0e393ee-cbb5-4522-80cd-e2a5bed582fa")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP5")
 					(unit 1)
@@ -10565,7 +10565,7 @@
 			(uuid "570f1d4b-f817-4a09-8433-cee9ac0b6164")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C25")
 					(unit 1)
@@ -10642,7 +10642,7 @@
 			(uuid "af3a5aaa-1e7a-47f8-9ad9-968b3380837a")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP15")
 					(unit 1)
@@ -10720,7 +10720,7 @@
 			(uuid "40aeca11-40f3-4013-b8a4-3802f68a5a79")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR065")
 					(unit 1)
@@ -10802,7 +10802,7 @@
 			(uuid "2735445d-d4e7-45c5-98be-c7d07d959a61")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "R2")
 					(unit 1)
@@ -10880,7 +10880,7 @@
 			(uuid "f69f5766-3c55-4e57-bae5-7141a4787eac")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR066")
 					(unit 1)
@@ -10958,7 +10958,7 @@
 			(uuid "b73c62a9-400b-4858-a1ec-6541a9e7d27f")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR019")
 					(unit 1)
@@ -11036,7 +11036,7 @@
 			(uuid "930c248a-b49a-4ed1-a284-f9218d2f9773")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR067")
 					(unit 1)
@@ -11118,7 +11118,7 @@
 			(uuid "1cf98621-5289-4078-acd0-9fe4a49ef2d7")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C19")
 					(unit 1)
@@ -11210,7 +11210,7 @@
 			(uuid "d157be93-d966-4170-9829-6e36e7d693ae")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "U6")
 					(unit 1)
@@ -11289,7 +11289,7 @@
 			(uuid "c302c19d-8851-4f92-bc69-080ac9e4eec7")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C22")
 					(unit 1)
@@ -11368,7 +11368,7 @@
 			(uuid "976ef823-63d8-4baf-a5a7-cfa93d3a9ed1")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C15")
 					(unit 1)
@@ -11539,7 +11539,7 @@
 			(uuid "935a78ed-bd68-43dd-8f78-f7c54759f3dc")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "U5")
 					(unit 1)
@@ -11617,7 +11617,7 @@
 			(uuid "b55901cb-aaf6-4559-bc98-f58039faed82")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR07")
 					(unit 1)
@@ -11696,7 +11696,7 @@
 			(uuid "33192d4f-7407-4388-8dcd-7e8ed6a5dc19")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C23")
 					(unit 1)
@@ -11775,7 +11775,7 @@
 			(uuid "fc55523b-64b3-49fa-83d1-ee3861ba0275")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "TP4")
 					(unit 1)
@@ -11853,7 +11853,7 @@
 			(uuid "62fd094c-0e77-4bd4-b464-024374bffe8b")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR012")
 					(unit 1)
@@ -11931,7 +11931,7 @@
 			(uuid "b2269ecf-15e5-416d-91b0-cb7ab49b4b51")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "#PWR09")
 					(unit 1)
@@ -12010,7 +12010,7 @@
 			(uuid "4f5946ab-e57b-4dd0-b1ac-d0c07cc54f36")
 		)
 		(instances
-			(project ".bitcoinMiner.spinrender-src"
+			(project "bitcoinMiner"
 				(path "/0beaeab8-8358-4f2b-8329-8eaccffff109/edfc66a9-6924-4f17-a7d6-08ee14299dda"
 					(reference "C8")
 					(unit 1)
