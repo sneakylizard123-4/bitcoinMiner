@@ -144,5 +144,3 @@ Still need to do before fab: fix the C58 duplicate, assign missing 3D models for
 **Total time spent: 3 hours**
 
 ---
-
-**Total project time so far: 38 hours**
