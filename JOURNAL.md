@@ -43,6 +43,78 @@ The ESP32 module went in the lower left with USB-C along the board edge. Etherne
 
 **Total time spent: 7 hours**
 
+# February 16: Ethernet and power routing
+
+Focused on routing the Ethernet PHY and power section today.
+
+The DP83848I RMII bus traces to the ESP32 needed to be length-matched. The RMII interface runs at 50MHz and while it's not as timing-critical as DDR, having traces within 5mm of each other ensures the clock-to-data setup/hold margins are met. Rerouted the MDIO, MDC, RXD, TXD, and clock lines three times before getting them close enough. The clock line ended up 2mm longer than the data lines, which is within tolerance.
+
+The power section was the harder part. The TPS546D24 inductor placement kept ending up too far from the output caps. At 20A switching, even a few millimeters of trace adds parasitic inductance that causes voltage spikes on the output during load transients. Tried three different placements before settling on one where the inductor sits 4mm from the output cap bank. Still not ideal but workable.
+
+Routed the 1.2V output pour as a solid copper plane on layer 3 with stitching vias to layer 4 for current sharing. The BM1370 draws 15A at full hash rate and the plane needs to handle that without excessive voltage drop. Calculated the copper cross-section: 2oz copper on a 40mil pour gives about 5A per layer, so splitting across two layers gets me to 10A per layer minimum.
+
+Also added the RJ45 connector footprint and routed the differential pairs from the DP83848I. The RJ45 magnetics handle the impedance matching internally but the traces still need to be kept short - under 25mm from PHY to connector.
+
+Three KiCad backup zips from this session got committed later in March. Forgot to commit at the time and just kept working.
+
+![Power routing](images/bitcoinMiner-Power.png)
+
+**Total time spent: 6 hours**
+
+# February 17: First PCB pass completion
+
+Eight hours on the PCB today, mostly finishing the first routing pass.
+
+Placed the EMC2101 fan controller between the power section and the Ethernet PHY. The remote temperature diode traces from the BM1370 run through here, so it made sense to keep it close to the ASIC. Routed the I2C lines (SDA, SCL) from the ESP32 to the EMC2101 with 4.7K pull-ups on both lines.
+
+The 22 1uF 0402 decoupling caps around the BM1370 took forever to route. Each cap needs a short, wide trace to the power pin and a via directly to the ground plane. Used 8mil traces for the power connections and 0.3mm vias for the ground connections. Some of the caps on the corners of the ASIC ended up with longer traces than I wanted - 3-4mm instead of the ideal 1mm - but there's no physical way to get them closer without overlapping the pads.
+
+The USB-C connector pads were painful. The 14-pin footprint has 0.5mm pitch pads with only 0.2mm clearance to adjacent copper. Had to set the clearance rule for that area to 0.15mm and manually route the connections. The CC1 and CC2 pins go through 5.1K resistors to ground for the USB-C identification, and those traces had to snake between the data lines without violating clearance.
+
+Added 4 mounting holes with pads (for grounding through standoffs) and 8 fiducials for pick-and-place. Fiducials matter - without them, automated assembly can't accurately place the 0402 passives.
+
+By the end of the session the board had a complete routing pass. Not pretty but everything was connected. DRC showed 30 clearance violations to fix tomorrow.
+
+![First complete routing](images/pcb-iso-right.png)
+
+**Total time spent: 8 hours**
+
+# February 20: DRC cleanup
+
+Ran DRC and started fixing the 30 clearance violations from the first pass.
+
+Most were around the USB-C connector where the pads are very tight - the 14-pin USB-C footprint has 0.5mm pitch pads with only 0.2mm clearance to adjacent copper, right at the edge of what most fabs can reliably produce. Had to manually adjust the copper pour clearance around those pads to get DRC to pass in that area. Ended up cutting a relief in the ground pour around the USB connector to give the data traces more room.
+
+Found two traces routed on the wrong layer. SPI bus traces between the ESP32 and the Ethernet PHY that somehow got moved to the inner power plane during a layer swap. Would have shorted to the 1.2V plane and probably destroyed the ESP32 on power-up. DRC catches this stuff - always run it before calling a layout done.
+
+The barrel jack footprint was wrong too - used a generic footprint but the pin spacing didn't match the Tensility 54-00164 part I'm ordering. Switched to the Wuerth 694106106102 outline which has the correct 5.0mm pin spacing. Had to reroute two traces that ran under the connector body. Also moved the mounting holes to the exact board corners so they line up with standard standoffs.
+
+Length-matched the SPI traces between the ESP32 and DP83848I. The RMII interface runs at 50MHz and while it's not as timing-critical as DDR, having traces within 5mm of each other ensures the clock-to-data setup/hold margins are met. Rerouted 3 traces to get them within 2mm of each other. Only took 20 minutes but prevents mysterious intermittent Ethernet failures that would be a nightmare to debug after fab.
+
+After fixing all 30 violations, DRC came back clean. Zero violations. The board was ready for a second look at the power section.
+
+![DRC cleanup](images/pcb-top-angle.png)
+
+**Total time spent: 4 hours**
+
+# February 22: Reworked power section layout
+
+The inductor placement from earlier was still bugging me, so I did a proper thermal analysis.
+
+The TPS546D24 inductor was 4mm from the output capacitors after the February 16 rework. At 20A switching, that 4mm of trace adds roughly 1nH of parasitic inductance - voltage spikes on the output during load transients when the ASIC starts a new hash round and suddenly demands 15A. In simulation the output ripple was 40mV peak-to-peak, technically within the BM1370's plus/minus 5% tolerance but cutting it close.
+
+Moved the inductor 2mm closer to the output cap bank, widened the output copper pour from 40mil to 80mil, and added 6 ground vias stitched directly under the inductor. Parasitic inductance dropped from 1nH to about 0.5nH.
+
+Also bumped the output bulk caps from 47uF to 100uF each (4 total = 400uF). The TPS546D24 app note recommends at least 1000uF for loads above 15A, and I was at 900uF. The BM1370 doesn't draw constant current - it draws in bursts as different stages of the SHA-256 pipeline activate, so the extra capacitance helps with transient response.
+
+Simulated ripple dropped from 40mV to 18mV after the rework. Thermal simulation also looked better - inductor hotspot went from 85C to 62C. Getting the schematic right is necessary but not enough. Component placement and copper routing matter just as much for power supply performance.
+
+Added the bitcoin logo footprint to the board silkscreen while I was in there. Small touch but it looks cool. Also moved the EMC2101 fan controller 3mm closer to the ASIC so the remote temperature diode traces run shorter - the diode reading gets noisy over long traces on a switching regulator board.
+
+![Reworked power layout](images/bitcoinMiner-Power.png)
+
+**Total time spent: 3 hours**
+
 # March 8-9: PCB layout refinement and repo cleanup
 
 Picked the project back up after a few weeks away from it. Spent two sessions mostly on the PCB.
