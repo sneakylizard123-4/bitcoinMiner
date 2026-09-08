@@ -69,12 +69,14 @@ Also i dont want to make my gpu suffer, its busy doing even less important stuff
 
 ## How to Flash
 
+Firmware lives in `firmware/` — it's a fork of [bitaxe ESP-Miner](https://github.com/bitaxeorg/ESP-Miner) with a custom **BitcoinMiner** board target (BM1370 @ 525MHz/1.15V, EMC2101 fan/temp, TPS546D24 PMBus core regulator). See `firmware/README.md` for full build/flash instructions.
+
 Flash via USB-C (J4) or TC2030 debug header (J2):
 
 1. Install [esptool](https://github.com/espressif/esptool): `pip install esptool`
 2. Connect the board via USB-C.
 3. Hold **SW1** (boot) and press **SW2** (reset) to enter download mode.
-4. Flash: `esptool.py --chip esp32s3 --port /dev/ttyACM0 write_flash 0x0 firmware.bin` make sure to choose correct port!
+4. Flash: `bitaxetool --config firmware/configs/config-bitcoinMiner.csv --firmware firmware/esp-miner-merged.bin` (or `esptool.py --chip esp32s3 --port /dev/ttyACM0 write_flash 0x0 firmware/esp-miner-merged.bin`) make sure to choose correct port!
 5. Press **SW2** (reset) to boot.
 
 ---

@@ -1,0 +1,64 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #,LCSC Link
+"C1, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C2, C20, C21, C22, C4, C5, C58, C6, C7, C8, C9",0603,22,1uF,C59782,https://www.lcsc.com/search?q=C59782
+"C23, C24, C25, C26, C27, C28, C3, C36, C37",0603,9,0.1uF,C66501,https://www.lcsc.com/search?q=C66501
+"C29, C30, C31, C38, C42, C44",0402,6,1uF,C2177690,https://www.lcsc.com/search?q=C2177690
+"C32, C39",0805,2,10uF,C1713,https://www.lcsc.com/search?q=C1713
+"C33, C45, C48, C59, C60, C61, C62, C63, C64, C65, C66, C67",0402,12,0.1uF,C159816,https://www.lcsc.com/search?q=C159816
+C34,0603,1,47uF,C140782,https://www.lcsc.com/search?q=C140782
+C35,0603,1,470pF,C36252,https://www.lcsc.com/search?q=C36252
+"C40, C41",1210,2,47uF,C2932477,https://www.lcsc.com/search?q=C2932477
+C43,0402,1,4700pF,C599603,https://www.lcsc.com/search?q=C599603
+C46,0402,1,2200pF,C106861,https://www.lcsc.com/search?q=C106861
+C47,0402,1,4.7uF,C82453,https://www.lcsc.com/search?q=C82453
+C49,0805,1,1000pF,C152850,https://www.lcsc.com/search?q=C152850
+C50,0402,1,100pF,C597014,https://www.lcsc.com/search?q=C597014
+"C51, C52, C53",0805,3,22uF,C441864,https://www.lcsc.com/search?q=C441864
+"C54, C55, C56, C57",1206,4,100uF,C15008,https://www.lcsc.com/search?q=C15008
+"D1, D2",0603,2,LED,C12624,https://www.lcsc.com/search?q=C12624
+"D10, D11, D3, D4, D5, D6, D7, D8, D9",LED_WS2812B-2020_PLCC4_2.0x2.0mm,9,WS2812B-2020,C965555,https://www.lcsc.com/search?q=C965555
+J1,BarrelJack_Wuerth_694106106102_2.0x5.5mm,1,54-00164,C431534,https://www.lcsc.com/search?q=C431534
+J4,USB_C_Receptacle_HRO_TYPE-C-31-M-12,1,USB_C_Receptacle_USB2.0_14P,C165948,https://www.lcsc.com/search?q=C165948
+J6,PinSocket_1x04_P2.54mm_Vertical,1,Conn_01x04,C2718488,https://www.lcsc.com/search?q=C2718488
+J7,JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical,1,Conn_01x04_MountingPin,C160390,https://www.lcsc.com/search?q=C160390
+L1,L_Coilcraft_SLC1175,1,300nH SLC1175-271MEC_COC,,"Not on LCSC (Coilcraft) - order SLC1175-271MEC from Coilcraft/Mouser/DigiKey"
+"R1, R3",0603,2,1K,C22548,https://www.lcsc.com/search?q=C22548
+R13,0402,1,14.7k,C4021671,https://www.lcsc.com/search?q=C4021671
+R14,0402,1,0,C881153,https://www.lcsc.com/search?q=C881153
+R16,0402,1,3.74k,C2085340,https://www.lcsc.com/search?q=C2085340
+R17,0402,1,11.8k,C324858,https://www.lcsc.com/search?q=C324858
+R18,0402,1,68.1k,C844116,https://www.lcsc.com/search?q=C844116
+R19,0402,1,10,C138066,https://www.lcsc.com/search?q=C138066
+R20,1206,1,1,C2912606,https://www.lcsc.com/search?q=C2912606
+"R21, R24, R25, R8",0603,4,10k,C98220,https://www.lcsc.com/search?q=C98220
+"R22, R23",0402,2,49.9,C482189,https://www.lcsc.com/search?q=C482189
+R4,0402,1,10k,C60490,https://www.lcsc.com/search?q=C60490
+"R5, R6",0603,2,100,C100700,https://www.lcsc.com/search?q=C100700
+R7,0603,1,5.6K,C844799,https://www.lcsc.com/search?q=C844799
+R9,0402,1,8.25k,C185389,https://www.lcsc.com/search?q=C185389
+"SW1, SW2",Panasonic_EVQPUM_EVQPUD,2,SW_Push,,"Not on LCSC (Panasonic EVQPU series) - order from Mouser/DigiKey"
+TP10,TestPoint_Pad_D1.5mm,1,LITE_PAD,,Bare test pad - no part
+TP11,TestPoint_Pad_D1.5mm,1,INV_CLKO,,Bare test pad - no part
+TP12,TestPoint_Pad_D1.5mm,1,NRSTO,,Bare test pad - no part
+TP13,TestPoint_Pad_D1.5mm,1,CO,,Bare test pad - no part
+TP14,TestPoint_Pad_D1.5mm,1,RI,,Bare test pad - no part
+TP15,TestPoint_Pad_D1.5mm,1,CLKO,,Bare test pad - no part
+TP16,TestPoint_Pad_D1.5mm,1,BO,,Bare test pad - no part
+TP17,TestPoint_Pad_D1.5mm,1,PIN_MODE,,Bare test pad - no part
+TP25,TestPoint_Pad_D1.5mm,1,TEMP_P,,Bare test pad - no part
+TP26,TestPoint_Pad_D1.5mm,1,TEMP_N,,Bare test pad - no part
+TP27,TestPoint_Pad_D1.5mm,1,FAN_TACH,,Bare test pad - no part
+TP28,TestPoint_Pad_D1.5mm,1,FAN_PWM,,Bare test pad - no part
+TP3,TestPoint_Pad_D1.5mm,1,0V8,,Bare test pad - no part
+TP4,TestPoint_Pad_D1.5mm,1,1V2,,Bare test pad - no part
+TP5,TestPoint_Pad_D1.5mm,1,BI,,Bare test pad - no part
+TP6,TestPoint_Pad_D1.5mm,1,RST_N,,Bare test pad - no part
+TP9,TestPoint_Pad_D1.5mm,1,ROSC_SEL,,Bare test pad - no part
+U10,ESP32-S3-WROOM-1U,1,ESP32-S3-WROOM-1,C2913202,https://www.lcsc.com/search?q=C2913202
+U11,TSSOP-8_3x3mm_P0.65mm,1,EMC2101,C626968,https://www.lcsc.com/search?q=C626968
+U12,LQFN40-CLIP,1,TPS546D24ARVFR,C507280,https://www.lcsc.com/search?q=C507280
+U2,Crystal_SMD_2016-4Pin_2.0x1.6mm,1,25MHz,C843258,https://www.lcsc.com/search?q=C843258
+U3,SOT-23-5,1,TLV75712PDBV,C1509296,https://www.lcsc.com/search?q=C1509296
+U4,SOT-23-5,1,MCP1824T-0802E,C625460,https://www.lcsc.com/search?q=C625460
+U5,BM1370,1,BM1370_mode1,,"Not on LCSC (Bitmain ASIC) - source from Bitmain/secondary market"
+"U6, U7, U8",SOT-23-6_Handsoldering,3,SN74LVC1T45DBV,C7843,https://www.lcsc.com/search?q=C7843
+U9,SOT-23-5,1,TLV75733PDBV,C485517,https://www.lcsc.com/search?q=C485517
