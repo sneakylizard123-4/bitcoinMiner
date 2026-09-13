@@ -3,6 +3,9 @@
 A single-BM1370 Bitcoin mining board with onboard ESP32-S3 for wifi and active fan cooling. No external controller board needed!
 il add more bm1370s soon trust
 
+## NOTE TO REVIEWER!!!
+iv rewritten this thing multiple times
+
 ![PCB Top](images/pcb-top-angle.png)
 
 ![PCB Isometric](images/pcb-iso-right.png)
