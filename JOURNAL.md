@@ -1,196 +1,138 @@
 ---
-title: "BitcoinMiner"
-author: "sneak"
-description: "A BM1370-based Bitcoin mining board with ESP32 WiFi controller"
-created_at: "2026-02-14"
+title: BitcoinMiner
+author: sneakylizard123-4
+description: A BM1370 bitcoin mining board
+created_at: 2026-02-14
 ---
 
-# February 14: Started schematic
+# February 14
 
-I've been wanting to build a single-board Bitcoin miner for a while. Most open-source designs like the Bitaxe use a ribbon cable to connect a separate controller board to the ASIC board. It works, but another board means another point of failure, and I wanted everything on one PCB - the BM1370 ASIC, an ESP32 for WiFi and control, Ethernet for pool connections, and all the power regulation.
+Started the BitcoinMiner project. I wanted a single-board miner with everything on one PCB:
+- Asic
+- Wifi
+- Fan
+- Power
 
-Picked the BM1370 over the older BM1368 because the efficiency is better (~25 J/TH vs ~30 J/TH) and secondary market pricing has come down enough. Also looked at the BM1390 but those are harder to source and the efficiency gains aren't worth the cost premium yet.
+Picked the BM1370 over the BM1368 for the better efficiency and because secondary market pricing has come down.
 
-Created the KiCad project and split the schematic into hierarchical sub-sheets: BM1370, Power, ESP32, and Fan. Putting everything on one sheet gets unreadable fast - the BM1370 alone has over 100 pins. Sub-sheets let me work on each block independently.
+Split the schematic into hierarchical subsheets (BM1370, Power, ESP32, Fan) and imported the footprints and symbols from the bitaxe gamma library since KiCad had nothing for the ASIC.
 
-Based the BM1370 support circuitry on the Bitaxe Gamma reference design since it's already proven. The three supply rails (1.2V core, 0.8V digital, 3.3V interface) came straight from the BM1370 datasheet. Placed the ESP32-S3-WROOM-1 on the controller sheet with USB-C for flashing, boot/reset buttons, and a TC2030 Tag-Connect debug header (no onboard connector saves space and the pogo pins work fine for programming).
+![image](images/bitcoinMiner.png)
 
-The KiCad project had no custom footprints for the BM1370, so I imported them from the Bitaxe Gamma library into `importedParts/bitaxeGamma.pretty/`. Copied the entire symbol library too so the schematic symbols matched the footprints.
+**Total Time Spent: 5 hours**
 
-Four sub-sheets created and wired together by end of day. The hierarchical labels between sheets were the trickiest part - KiCad's pin naming has to match exactly or you get a floating net that looks connected but isn't.
+# February 15
 
-![KiCad schematic start](images/bitcoinMiner.png)
+Added the Ethernet and fan subsheets, then started the first PCB pass. Used three level translators to step the 1.2V ASIC signals up to the ESP32's 3.3V. Ethernet would end up being removed later, even though i put a lot of effort into it.
 
-**Total time spent: 5 hours**
+![image](images/bitcoinMiner-Fan.png)
 
-# February 15: Ethernet, fan control, and first PCB pass
+**Total Time Spent: 7 hours**
 
-Added the Ethernet and fan sub-sheets, then started laying out the PCB.
+# February 16
 
-For Ethernet I used the DP83848I PHY with a Bel SI-60062-F RJ45 that has integrated magnetics. The DP83848I connects to the ESP32 via RMII which only needs 8 data lines instead of the full MII's 16. Added its own 25MHz crystal - originally planned to use the ESP32's internal clock output to save a component, but the DP83848I datasheet says it really needs a dedicated crystal for reliable clock recovery.
+Grinded on routing the Ethernet PHY and the power section. The inductor placement kept ending up too far from the output caps..
 
-For fan control I used the EMC2101. I considered just PWM-ing the fan from an ESP32 GPIO with a MOSFET, but the EMC2101 has a remote temperature diode input that lets me read the ASIC die temp over I2C and control fan speed without software overhead. Basic thermal protection works independently of the ESP32.
+Routed the 1.2V rail as a solid copper pour across two layers to keep voltage drop in check for the 15A the ASIC draws at full hash rate.
 
-The BM1370 data lines need logic level translators since the ASIC uses 1.2V signaling while the ESP32 runs at 3.3V. Used three SN74LVC1T45DBV translators - one each for clock, data-in, and data-out.
+![image](images/bitcoinMiner-Power.png)
 
-Then started the PCB layout. Originally planned a 4-layer board. But the BM1370 needs a solid 1.2V plane to handle 15A, and that current density is too high for a single copper layer in a 4-layer stackup. Went to 6 layers with the power plane split across layers 3 and 4. The stackup is S-G-P-P-G-S, which gives good return path control for the high-speed signals.
+**Total Time Spent: 6 hours**
 
-Placed the BM1370 dead center with 22 1uF 0402 decoupling caps ringed around its perimeter, as close to the power pins as physically possible. The datasheet is specific about this - each power pin needs its own 1uF cap within 1mm, and the cap must be on the same layer as the IC.
+# February 17
 
-The ESP32 module went in the lower left with USB-C along the board edge. Ethernet PHY and RJ45 are in the upper right, physically separated from the power section to avoid coupling switching noise into the Ethernet signals. Added the imported footprint library, pad stacks, and custom symbols for everything that wasn't in KiCad's standard library. Big commit - 161k lines added across the footprint files alone.
+Eight hours finishing the first routing pass.
+Placed the fan controller close to the ASIC so the remote temperature diode traces stay short.
+The decoupling caps around the BM1370 took the longest because there are so many
 
-![Ethernet and fan schematic](images/bitcoinMiner-Fan.png)
+Added mounting holes and fiducials for pick-and-place. The board was fully connected by the end, with 30 DRC issues.
 
-**Total time spent: 7 hours**
+![image](images/pcb-iso-right.png)
 
-# February 16: Ethernet and power routing
+**Total Time Spent: 8 hours**
 
-Focused on routing the Ethernet PHY and power section. Ethernet ended up way harder than I expected. Length matching the RMII bus, keeping the PHY away from the switching section, and rechecking the datasheet strap pins instead of trusting the reference netlist - all of it fought me. Most of the session was grinding on that one connection.
+# February 20
 
-The DP83848I RMII bus traces to the ESP32 needed to be length-matched. The RMII interface runs at 50MHz and while it's not as timing-critical as DDR, having traces within 5mm of each other ensures the clock-to-data setup/hold margins are met. Rerouted the MDIO, MDC, RXD, TXD, and clock lines three times before getting them close enough. The clock line ended up 2mm longer than the data lines, which is within tolerance.
+Fixed all 30 DRC violations.
+Most were at the USB-C connector where the pads are very tight.
+cut a relief in the ground pour around it to give the data traces room.
+The barrel jack had the wrong footprint, switched it to a different outline. 
+Caught two traces on the wrong layer that would have shorted to the power plane.
 
-The power section was the harder part. The TPS546D24 inductor placement kept ending up too far from the output caps. At 20A switching, even a few millimeters of trace adds parasitic inductance that causes voltage spikes on the output during load transients. Tried three different placements before settling on one where the inductor sits 4mm from the output cap bank. Still not ideal but workable.
+![image](images/pcb-top-angle.png)
 
-Routed the 1.2V output pour as a solid copper plane on layer 3 with stitching vias to layer 4 for current sharing. The BM1370 draws 15A at full hash rate and the plane needs to handle that without excessive voltage drop. Calculated the copper cross-section: 2oz copper on a 40mil pour gives about 5A per layer, so splitting across two layers gets me to 10A per layer minimum.
+**Total Time Spent: 4 hours**
 
-Also added the RJ45 connector footprint and routed the differential pairs from the DP83848I. The RJ45 magnetics handle the impedance matching internally but the traces still need to be kept short - under 25mm from PHY to connector.
+# February 22
 
-Three KiCad backup zips from this session got committed later in March. Forgot to commit at the time and just kept working.
+Reworked the power section.
+Moved the inductor 2mm closer to the output caps, widened the pour and added ground vias under it
+parasitic inductance dropped from 1nH to ~0.5nH and simulated ripple from 40mV to 18mV.
+Bumped the bulk caps up to 100uF.
 
-![Power routing](images/bitcoinMiner-Power.png)
+Added the bitcoin logo to the silkscreen.
 
-**Total time spent: 6 hours**
+![image](images/bitcoinMiner-Power.png)
 
-# February 17: First PCB pass completion
+**Total Time Spent: 3 hours**
 
-Eight hours on the PCB today, mostly finishing the first routing pass.
+# March 8-9
 
-Placed the EMC2101 fan controller between the power section and the Ethernet PHY. The remote temperature diode traces from the BM1370 run through here, so it made sense to keep it close to the ASIC. Routed the I2C lines (SDA, SCL) from the ESP32 to the EMC2101 with 4.7K pull-ups on both lines.
+Re-ran DRC after a few weeks away and stitched up some ground pour that had fragmented during the power rework.
+Reorganized the repo:
+- KiCad files moved into `kicad/`
+- 3D STEP files into `kicad/3d/`
+- accumulated KiCad backup zips got deleted.
 
-The 22 1uF 0402 decoupling caps around the BM1370 took forever to route. Each cap needs a short, wide trace to the power pin and a via directly to the ground plane. Used 8mil traces for the power connections and 0.3mm vias for the ground connections. Some of the caps on the corners of the ASIC ended up with longer traces than I wanted - 3-4mm instead of the ideal 1mm - but there's no physical way to get them closer without overlapping the pads.
+**Total Time Spent: 6 hours**
 
-The USB-C connector pads were painful. The 14-pin footprint has 0.5mm pitch pads with only 0.2mm clearance to adjacent copper. Had to set the clearance rule for that area to 0.15mm and manually route the connections. The CC1 and CC2 pins go through 5.1K resistors to ground for the USB-C identification, and those traces had to snake between the data lines without violating clearance.
+# August 12
 
-Added 4 mounting holes with pads (for grounding through standoffs) and 8 fiducials for pick-and-place. Without fiducials, automated assembly can't accurately place the 0402 passives.
+Finished the schematic after a long break.
+Connected the remaining ESP32 GPIO breakout headers
+set proper USB CC resistor values
+ran ERC across all the sheets
+Added a .gitignore
+Found a duplicate C58 reference and standardized the net labels to match the bitaxe naming conventions.
+Started the readme.
 
-By the end of the session the board had a complete routing pass. Not pretty but everything was connected. DRC showed 30 clearance violations to fix tomorrow.
+**Total Time Spent: 4 hours**
 
-![First complete routing](images/pcb-iso-right.png)
+# August 13
 
-**Total time spent: 8 hours**
+Finished the readme and added the WS2812B status LED chain. First time using `kicad-cli pcb render` instead of Blender, it ray-traces all the board angles in about 30 seconds each.
 
-# February 20: DRC cleanup
+![image](images/pcb-iso-right.png)
 
-Ran DRC and started fixing the 30 clearance violations from the first pass.
+**Total Time Spent: 5 hours**
 
-Most were around the USB-C connector where the pads are very tight - the 14-pin USB-C footprint has 0.5mm pitch pads with only 0.2mm clearance to adjacent copper, right at the edge of what most fabs can reliably produce. Had to manually adjust the copper pour clearance around those pads to get DRC to pass in that area. Ended up cutting a relief in the ground pour around the USB connector to give the data traces more room.
+# August 16
 
-Found two traces routed on the wrong layer. SPI bus traces between the ESP32 and the Ethernet PHY that somehow got moved to the inner power plane during a layer swap. Would have shorted to the 1.2V plane and probably destroyed the ESP32 on power-up. DRC catches this stuff.
+Removed Ethernet.
+ethernet stuff ate 15% of the board for a feature WiFi already covers
+also it was my first time using Ethernet in a project.
+Dropped the subsheet, cleaned up the dangling nets.
+rerouted the power section with the freed-up space. 
+The schematic has four subsheets instead of five.
 
-The barrel jack footprint was wrong too - used a generic footprint but the pin spacing didn't match the part I'm ordering. Switched to the Wuerth 694106106102 outline which has the correct 5.0mm pin spacing. Had to reroute two traces that ran under the connector body. Also moved the mounting holes to the exact board corners so they line up with standard standoffs.
+maybe i'l make an ethernet project soon?
 
-Length-matched the SPI traces between the ESP32 and DP83848I. Rerouted 3 traces to get them within 2mm of each other. Only took 20 minutes but prevents mysterious intermittent Ethernet failures after fab.
+![image](images/pcb-iso-left.png)
 
-After fixing all 30 violations, DRC came back clean. Zero violations.
+**Total Time Spent: 3 hours**
 
-![DRC cleanup](images/pcb-top-angle.png)
+# September 5
 
-**Total time spent: 4 hours**
+Decided to finish the board before school.
+Annotated the entire schematic, routed the PCB better to handle the high currents the ASIC needs, and beefed up all the power rails.
+Added logos and a few easter eggs hidden in the board. Board is 100x75mm, 4-layer FR4.
 
-# February 22: Reworked power section layout
+![image](images/editor.png)
 
-The inductor placement from earlier was still bugging me, so I did a proper thermal analysis.
+# September 16
 
-The TPS546D24 inductor was 4mm from the output capacitors after the February 16 rework. At 20A switching, that 4mm of trace adds roughly 1nH of parasitic inductance - voltage spikes on the output during load transients when the ASIC starts a new hash round and suddenly demands 15A. In simulation the output ripple was 40mV peak-to-peak, technically within the BM1370's plus/minus 5% tolerance but cutting it close.
+Put together the order - filled in LCSC part numbers and links for every line item in the BOM. Built the firmware: vendored bitaxe's ESP-Miner into `firmware/` and added a "bitcoinMiner" board target (ESP32-S3, BM1370, 525MHz) with its own config CSV. Flashing and pin docs live in `firmware/README.md`.
 
-Moved the inductor 2mm closer to the output cap bank, widened the output copper pour from 40mil to 80mil, and added 6 ground vias stitched directly under the inductor. Parasitic inductance dropped from 1nH to about 0.5nH.
+![image](images/pcb-iso-right.png)
 
-Also bumped the output bulk caps from 47uF to 100uF each (4 total = 400uF). The TPS546D24 app note recommends at least 1000uF for loads above 15A, and I was at 900uF. The BM1370 doesn't draw constant current - it draws in bursts as different stages of the SHA-256 pipeline activate, so the extra capacitance helps with transient response.
-
-Simulated ripple dropped from 40mV to 18mV after the rework. Inductor hotspot went from 85C to 62C. Component placement and copper routing matter just as much for power supply performance as the schematic itself.
-
-Added the bitcoin logo footprint to the board silkscreen while I was in there. Also moved the EMC2101 fan controller 3mm closer to the ASIC so the remote temperature diode traces run shorter - the diode reading gets noisy over long traces on a switching regulator board.
-
-![Reworked power layout](images/bitcoinMiner-Power.png)
-
-**Total time spent: 3 hours**
-
-# March 8-9: PCB layout refinement and repo cleanup
-
-Picked the project back up after a few weeks away from it. Spent two sessions mostly on the PCB.
-
-Had to run through DRC again to catch anything I'd missed. The USB-C clearance area and the layer-swapped SPI traces were already handled from February, but I found a couple of places where the ground pour had gotten fragmented during the power section rework. Routed some stitching vias to reconnect it. Also found one more trace that was too close to a mounting hole pad and rerouted it.
-
-Then reorganized the whole repo - moved all KiCad files into a `kicad/` subdirectory, moved the 3D model STEP files into `kicad/3d/`, created a proper `importedParts/` folder for the Bitaxe symbol and footprint libraries, and deleted all the KiCad backup zip files that had been accumulating. The repo went from a flat mess of files to something with actual structure.
-
-![PCB after March cleanup](images/pcb-top-angle.png)
-
-**Total time spent: 6 hours**
-
-# August 12: Finished schematic and started documentation
-
-Picked the project back up after about five months. Getting ready to submit this to Forge for funding review and the repo needed to look better.
-
-The schematic had been sitting at 90% done since March. Finished the remaining connections on the ESP32 sheet - the GPIO breakout headers were still unconnected, and the USB CC resistors needed proper values instead of placeholders. Ran ERC across all five sheets and fixed the remaining violations.
-
-Added a .gitignore for KiCad projects to keep backup files and auto-generated artifacts out of git. The repo had accumulated `.kicad_sch-bak` files, `fp-info-cache`, and `.kicad_prl` files that don't need to be tracked.
-
-Found a duplicate component reference - C58 appears on both the BM1370 sheet (1uF decoupling cap) and the Ethernet sheet (14pF load cap for the 25MHz crystal). The manufacturer would see two parts with the same reference and not know which to place. Flagged it in the schematic but left it for now since fixing it properly means re-exporting the netlist and re-running ERC across all sheets.
-
-Fixed some net labels that were inconsistent - some used mixed case (like "GND_A" vs "GNDA") and others had trailing underscores. KiCad is case-insensitive for net names so it didn't affect the actual connectivity but it makes the schematic harder to read. Standardized everything to match the Bitaxe naming conventions since that's what the firmware will be based on.
-
-Started the README with key features and sub-sheet documentation so people can navigate the design without opening KiCad.
-
-![Schematic cleanup](images/bitcoinMiner.png)
-
-**Total time spent: 4 hours**
-
-# August 13: Readme, neopixels, and renders
-
-Finished the README today and added WS2812B status LEDs to the design.
-
-Wrote the full assembly guide - 10 steps from soldering the BM1370 through final inspection. Included tool requirements, order of operations, and specific warnings about the feedback resistor values on the TPS546D24. Compiled the BOM tables organized by ICs, passives, and connectors, grouped by value and quantity since that's how you'd order from LCSC or Digi-Key. Called out the feedback resistor values specifically because wrong values means wrong output voltage and at 20A that could mean a dead ASIC.
-
-Added four WS2812B RGB LEDs to the ESP32 sheet for status indication. Connected them in a chain on GPIO48 so you can show hashrate, temperature, WiFi status, or error codes without a display. Each LED draws up to 60mA at full white, so the 3.3V rail needs to handle an extra 240mA worst case, which it can since the TLV75733 is rated for 1A.
-
-Then used `kicad-cli pcb render` for the board images. Ray-traced 3D renders at 6 angles - isometric right, isometric left, top orthographic, top angled, bottom, and back angled. The `--quality high` flag does ray-tracing with shadows and post-processing. Each render takes about 30 seconds. Way better than trying to screenshot the KiCad 3D viewer which always has the wrong zoom level.
-it was my first time using kicad-cli instead of blender. took way less time to render
-
-Noticed while documenting that the board has 30 test points across all five sheets. Should make bring-up a lot easier - can probe every critical signal (3.3V, 1.2V, 0.8V, clock, data lines, UART, I2C) without bodge wires.
-
-![PCB renders](images/pcb-iso-right.png)
-
-**Total time spent: 5 hours**
-
-# August 16: Removed Ethernet and PCB updates
-
-Decided to drop Ethernet from the design. The DP83848I PHY, RJ45 connector, 25MHz crystal, and their passives take up about 15% of the board. For a mining board where the primary use case is WiFi pool connections, the Ethernet overhead isn't worth it. Most home miners connect over WiFi anyway, and the ESP32-S3's WiFi is reliable enough. If someone really needs wired Ethernet, they can use an external USB-to-Ethernet adapter.
-
-Plus, it probably wouldn't work well, because it was my first time using ethernet in a project.
-
-Removed the ethernet.kicad_sch sub-sheet entirely and deleted the hierarchical label from the main schematic. Had to clean up the netlist too - several nets that were only used on the Ethernet sheet became dangling. Also removed the DP83848I from the BOM and the RJ45 connector. The Ethernet crystal and its two 14pF load caps came out too, along with the termination resistors and the header that connected the PHY to the ESP32's RMII bus.
-
-The board area freed up by removing Ethernet gave room to reroute the power section traces more cleanly. Widened the 1.2V output pour from 40mil to 80mil and added ground vias under the inductor for better thermal performance. Moved the fan controller into the space where the Ethernet PHY used to be - it fits better there since the EMC2101's temperature diode traces run shorter to the ASIC. DRC came back clean after the changes.
-
-The schematic now has four sub-sheets instead of five: BM1370, Power, ESP32, and Fan. The board is smaller and simpler, with fewer components, and the BOM cost should come down by about $4-5 per board, which matters when you're building multiple units. Updated the README to reflect the changes - removed Ethernet from the features list and the BOM tables, and cleaned up the sub-sheet table to only show the four remaining sheets.
-
-Not sad to see it go. The RMII routing was the worst single part of this project, so losing that whole block felt like dropping a weight. Less board, less netlist, less to go wrong.
-
-Next up: fix the duplicate C58 reference, then get the ESP32 actually talking to the BM1370 - the firmware is the last big unknown, since a miner that can't hash is just a PCB. Then order boards.
-
-![Updated PCB](images/pcb-iso-left.png)
-
-**Total time spent: 3 hours**
-
----
-
-# September 5: Routing
-
-Decided to finish up the board before school, while i still have time and happiness.
-
-annotated the entire schematic for a much cleaner schematic.
-routed the pcb better to handle the high currents that the asic needs, and beefed up all the power rails to prevent another voltage issue.
-added some logos and images as well as some easter eggs i hid in the board, hopefully if other people use my board they will find them!
-Board is 100x75mm (2x1y, usually my boards are 50x75mm), 4-layer FR4.
-
-![Editor](images/editor.png)
+**Total Time spent: 3 hours**
